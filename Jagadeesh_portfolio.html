@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Satya Jagadeesh | Security Portfolio</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #00ff00;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(0, 20, 0, 0.9);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            color: #00ff00;
+            text-decoration: none;
+            text-shadow: 0 0 5px #00ff00;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00ff91;
+            text-shadow: 0 0 10px #00ff91;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            animation: glitch 2s infinite;
+            background-image: url('https://source.unsplash.com/1600x900/?cybersecurity,hacking');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        .terminal {
+            background: #000;
+            border: 1px solid #00ff00;
+            padding: 1rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .terminal::before {
+            content: " > ";
+            animation: blink 1s infinite;
+        }
+
+/* About Section */
+        .about-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+}
+
+.about-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00ff00;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
+}
+
+.about-text {
+    flex: 1;
+    color: #fff;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        text-align: center;
+        
+    }
+}
+
+
+        /* Skills Section */
+        .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.skill-card {
+    flex: 1 1 200px;
+    max-width: 220px;
+    background: rgba(0, 255, 0, 0.05);
+    border: 1px solid #00ff00;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.skill-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00ff00;
+}
+
+
+        /* Projects Section */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #00ff00;
+    text-shadow: 0 0 8px #00ff00;
+}
+.project-card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background: rgba(0, 255, 0, 0.05);
+    border: 1px solid #00ff00;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ff00;
+}
+
+        
+        /* Contact Section */
+#contact {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #000;
+    color: #00ff00;
+    border-top: 1px solid #00ff00;
+}
+
+#contact h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+#contact p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 50%;
+    background: #fff;
+    padding: 5px;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px #00ff00);
+}
+
+
+        /* Animations */
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1> Satya Jagadeesh </h1>
+            <p>Cybersecurity Graduate | Penetration Testing & Network Security</p>
+            <div class="terminal">
+                <p>"Protecting digital worlds from cyber threats"</p>
+            </div>
+        </div>
+    </section>
+
+ <section id="about" class="about">
+    <div class="container about-container">
+        <div class="about-image">
+            <img src="https://i.pinimg.com/1200x/a7/dd/df/a7dddfae831fe816e94d2777726fe267.jpg" alt="Profile Picture">
+        </div>
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>Hi👋, I’m Satya Jagadeesh, a passionate Computer Science graduate specializing in Cybersecurity — where curiosity meets defense. From building Python-based steganography tools to deploying honeypots and securing networks, I thrive on turning complex challenges into practical security solutions. With hands-on experience in penetration testing, AWS, and network defense, I bring both technical skill and a relentless drive to learn. My goal? To safeguard the digital world, one vulnerability at a time.</p>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
+                <h3>Python Programming</h3>
+            </div>
+            <div class="skill-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
+                <h3>Amazon Web Services</h3>
+            </div>
+            <div class="skill-card">
+                <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRaGrBdln1C2FIazIyTCH4Dxp6cZ3Lxr8w4ODma0QVvhPebayacPUAn6THaoDWehPnSiKxr7FhLRFwVp9rSXCQnPHaUi5Au" alt="Windows Server">
+                <h3>Windows Server</h3>
+            </div>
+            <div class="skill-card">
+                <img src="https://1000logos.net/wp-content/uploads/2016/11/Cisco-Logo-2006.png" alt="Networking">
+                <h3>Networking (CCNA, CCNP)</h3>
+            </div>
+            <div class="skill-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjmC0SpnKtvVB4u9HZNJpP4XEb8yr3MKgOjA&s" alt="Vulnerability Assessment">
+                <h3>Vulnerability Assessment</h3>
+            </div>
+            <div class="skill-card">
+                <img src="https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-firewall-png-image_6480378.png" alt="Firewall">
+                <h3>Firewall</h3>
+            </div>
+            <div class="skill-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1163/1163519.png" alt="Cryptography">
+                <h3>Cryptography</h3>
+            </div>
+            <div class="skill-card">
+                <img src="https://img.favpng.com/12/25/8/microsoft-excel-microsoft-project-logo-microsoft-word-png-favpng-UkYRLVGcGivCEFNgUBTaDTVAM.jpg" alt="Excel">
+                <h3>Excel (Data Analysis)</h3>
+            </div>
+            <div class="skill-card">
+                <img src="https://images.seeklogo.com/logo-png/40/1/open-web-application-security-project-owasp-logo-png_seeklogo-408771.png" alt=" Cyber Security" >
+                <h3>Cyber Security (OWASP 10)</h3>
+            </div>
+            <div class="skill-card">
+                <img src="https://www.pikpng.com/pngl/b/74-748128_network-security-icon-internet-security-icon-png-clipart.png" alt="Network Security">
+                <h3>Network Security</h3>
+            </div>
+            <div class="skill-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJrO5I6nkFxepNEmniN9oel0aZbJF0Tv-fKQ&s" alt="Penetration Testing">
+                <h3>Penetration Testing</h3>
+                </div>
+            <div class ="skill-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJEzRbiNpJgmt_x-lKoAt_usn5BtbMR7Wynw&s" alt = "Html & CSS">
+                <h3>HTML & CSS</h3>
+            </div>    
+            
+        </div>
+    </div>
+</section>
+
+    
+
+   <section id="projects">
+    <div class="container">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <img src="https://e7.pngegg.com/pngimages/793/592/png-clipart-steganography-encryption-information-cryptography-data-oig-compliance-regulations-angle-text.png" alt="Steganography Tool">
+                <h3>Steganography Tool (Python)</h3>
+                <p>GUI-based tool using Tkinter for hiding and revealing messages in images with LSB technique. Focused on secure, user-friendly message concealment.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="https://techvccloud.mediacdn.vn/280518386289090560/2025/1/23/honeypot-17376236884851503155270-0-17-349-638-crop-17376236920111007536670.png" alt="Honeypot">
+                <h3>Honeypot Deployment</h3>
+                <p>Deployed a honeypot using Kali Linux to detect and log unauthorized access attempts. Analyzed data to strengthen network security measures.</p>
+            </div>
+
+            <div class="project-card">
+                <img src="https://blogapp.bitdefender.com/hotforsecurity/content/images/2022/02/French-dad-uses-signal-jammer-to-stop-his-kids-from-going-online--takes-down-neighborhood-s-internet-too-1.png" alt="WiFi Jammer">
+                <h3>WiFi Jammer (ESP8266)</h3>
+                <p>Developed a WiFi jammer using ESP8266 to test network resilience against signal interference, with focus on ethical and legal considerations.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section id="contact">
+    <div class="container">
+        <h2>Let's Connect</h2>
+        <p>I'd love to hear from you! Click a logo below to connect with me.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/iamjackky__" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="mailto:satyajagadeesh489@gmail.com">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+            </a>
+            <a href="https://www.linkedin.com/in/satya-jagadeesh/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+            </a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
