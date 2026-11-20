@@ -1,441 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Satya Jagadeesh | Security Portfolio</title>
-    <style>
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Courier New', monospace;
-        }
-
-        body {
-            background-color: #0d0d0d;
-            color: #00ff00;
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: rgba(0, 20, 0, 0.9);
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin: 0 1rem;
-        }
-
-        nav a {
-            color: #00ff00;
-            text-decoration: none;
-            text-shadow: 0 0 5px #00ff00;
-            transition: all 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #00ff91;
-            text-shadow: 0 0 10px #00ff91;
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            animation: glitch 2s infinite;
-            background-image: url('https://source.unsplash.com/1600x900/?cybersecurity,hacking');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px #00ff00;
-        }
-
-        .terminal {
-            background: #000;
-            border: 1px solid #00ff00;
-            padding: 1rem;
-            max-width: 600px;
-            margin: 2rem auto;
-            position: relative;
-        }
-
-        .terminal::before {
-            content: " > ";
-            animation: blink 1s infinite;
-        }
-
-/* About Section */
-        .about-container {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap; /* Allows stacking on smaller screens */
-}
-
-.about-image img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #00ff00;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-image img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #00ff00;
-}
-
-.about-text {
-    flex: 1;
-    color: #fff;
-}
-
-/* Responsive adjustment */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Satya Jagadeesh Kodela — Cyber Security and Digital Forensics postgraduate student in Auckland, New Zealand. Explore projects, technical skills, education and virtual job simulations.">
+  <meta name="theme-color" content="#080d09">
+  <title>Satya Jagadeesh Kodela | Cyber Security Portfolio</title>
+  <style>
+    :root {
+      --bg: #080d09;
+      --panel: #0d160f;
+      --panel-2: #101d13;
+      --green: #00e676;
+      --green-soft: #9af5bc;
+      --text: #e8f2eb;
+      --muted: #a5b6a9;
+      --line: rgba(0, 230, 118, .28);
+      --shadow: 0 0 24px rgba(0, 230, 118, .08);
+      --mono: "Courier New", Courier, monospace;
     }
-
-    .about-text {
-        text-align: center;
-        
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body {
+      background: var(--bg); color: var(--text); font-family: var(--mono);
+      line-height: 1.7; overflow-x: hidden;
+      background-image: radial-gradient(ellipse at 50% 0%, rgba(0,230,118,.08), transparent 45%);
     }
-}
-
-
-        /* Skills Section */
-        .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-}
-
-.skill-card {
-    flex: 1 1 200px;
-    max-width: 220px;
-    background: rgba(0, 255, 0, 0.05);
-    border: 1px solid #00ff00;
-    padding: 1rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
-}
-
-.skill-card img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 0.5rem;
-}
-
-.skill-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px #00ff00;
-}
-
-
-        /* Projects Section */
-.projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-}
-.project-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: #00ff00;
-    text-shadow: 0 0 8px #00ff00;
-}
-.project-card {
-    flex: 1 1 300px;
-    max-width: 350px;
-    background: rgba(0, 255, 0, 0.05);
-    border: 1px solid #00ff00;
-    padding: 1rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
-}
-
-.project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
-
-.project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #00ff00;
-}
-
-        
-        /* Contact Section */
-#contact {
-    text-align: center;
-    padding: 4rem 2rem;
-    background-color: #000;
-    color: #00ff00;
-    border-top: 1px solid #00ff00;
-}
-
-#contact h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    text-shadow: 0 0 10px #00ff00;
-}
-
-#contact p {
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.social-links img {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    border-radius: 50%;
-    background: #fff;
-    padding: 5px;
-}
-
-.social-links img:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 10px #00ff00);
-}
-
-
-        /* Animations */
-        @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-            100% { transform: translate(0); }
-        }
-
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+    a { color: var(--green-soft); }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+    .topbar {
+      position: sticky; top: 0; z-index: 50; background: rgba(5,12,7,.96);
+      border-bottom: 1px solid var(--line); backdrop-filter: blur(12px);
+    }
+    nav { max-width: 1180px; margin: auto; padding: .85rem 1.25rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .brand { color: var(--green); text-decoration:none; font-weight:bold; white-space:nowrap; }
+    .nav-links { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:.3rem 1.15rem; list-style:none; }
+    .nav-links a { color:var(--muted); text-decoration:none; font-size:.86rem; transition:color .2s; }
+    .nav-links a:hover { color:var(--green); }
+    .menu-toggle { display:none; background:transparent; border:1px solid var(--line); color:var(--green); padding:.4rem .65rem; font:inherit; }
+    .container { width:min(1100px, calc(100% - 2.5rem)); margin:auto; }
+    section { padding:5.2rem 0; border-bottom:1px solid rgba(0,230,118,.10); }
+    .hero { min-height:83vh; display:flex; align-items:center; text-align:left; padding-top:5rem; }
+    .eyebrow { color:var(--green); text-transform:uppercase; letter-spacing:.16em; font-size:.78rem; margin-bottom:1rem; }
+    h1 { color:#fff; font-size:clamp(2.2rem, 6vw, 4.3rem); line-height:1.12; letter-spacing:-.045em; text-shadow:0 0 22px rgba(0,230,118,.2); }
+    h1 span { color:var(--green); }
+    .hero-subtitle { color:var(--green-soft); font-size:clamp(1rem, 2.2vw, 1.3rem); margin:1.2rem 0; }
+    .hero-copy { color:var(--muted); max-width:760px; font-size:1rem; }
+    .terminal { max-width:760px; margin:2rem 0; padding:1rem 1.2rem; background:#020503; border:1px solid var(--line); box-shadow:var(--shadow); color:var(--green-soft); }
+    .terminal-label { color:var(--muted); font-size:.76rem; display:block; margin-bottom:.35rem; }
+    .terminal strong { color:var(--green); font-weight:normal; }
+    .actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.7rem; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.75rem 1.05rem; border:1px solid var(--green); border-radius:5px; text-decoration:none; color:var(--green); background:rgba(0,230,118,.06); font-weight:bold; font-size:.88rem; transition:all .2s; }
+    .btn:hover { background:var(--green); color:#041008; box-shadow:0 0 18px rgba(0,230,118,.25); }
+    .btn.secondary { border-color:rgba(0,230,118,.35); color:var(--text); background:transparent; }
+    .section-heading { margin-bottom:2rem; }
+    .section-heading .eyebrow { margin-bottom:.35rem; }
+    h2 { color:var(--green); font-size:clamp(1.65rem, 3vw, 2.2rem); text-shadow:0 0 10px rgba(0,230,118,.16); }
+    h3 { color:var(--green-soft); font-size:1.08rem; margin-bottom:.45rem; }
+    p { color:var(--muted); }
+    .about-grid { display:grid; grid-template-columns:1.4fr .8fr; gap:1.5rem; align-items:start; }
+    .panel, .card { background:linear-gradient(145deg, rgba(13,22,15,.98), rgba(8,15,10,.98)); border:1px solid var(--line); border-radius:9px; padding:1.35rem; box-shadow:var(--shadow); }
+    .facts { display:grid; gap:.85rem; }
+    .fact { border-bottom:1px solid rgba(0,230,118,.13); padding-bottom:.65rem; }
+    .fact:last-child { border:0; padding:0; }
+    .fact small { display:block; color:var(--green); text-transform:uppercase; letter-spacing:.1em; font-size:.68rem; }
+    .fact span { color:var(--text); font-size:.9rem; }
+    .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; }
+    .skill-card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:1.15rem; }
+    .skill-card h3 { font-size:.98rem; }
+    .skill-card p { font-size:.84rem; }
+    .tag-list { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.8rem; }
+    .tag { border:1px solid rgba(0,230,118,.24); color:var(--green-soft); background:rgba(0,230,118,.045); border-radius:4px; padding:.2rem .5rem; font-size:.72rem; }
+    .cards { display:grid; grid-template-columns:repeat(2, 1fr); gap:1rem; }
+    .card { display:flex; flex-direction:column; gap:.65rem; }
+    .card p { font-size:.88rem; }
+    .card .meta { color:var(--green); font-size:.74rem; text-transform:uppercase; letter-spacing:.08em; }
+    .card .card-footer { margin-top:auto; padding-top:.55rem; }
+    .status { display:inline-block; color:var(--green-soft); border:1px solid rgba(0,230,118,.3); border-radius:3px; padding:.15rem .45rem; font-size:.68rem; }
+    .timeline { display:grid; gap:1rem; }
+    .timeline-item { display:grid; grid-template-columns:190px 1fr; gap:1.3rem; padding:1.1rem 1.2rem; background:var(--panel); border-left:2px solid var(--green); border-radius:0 7px 7px 0; }
+    .date { color:var(--green); font-size:.82rem; }
+    .timeline-item p { font-size:.86rem; }
+    .credential { overflow-wrap:anywhere; font-size:.76rem; color:var(--muted); }
+    .doc-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1rem; }
+    .doc-card { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+    .doc-card p { font-size:.8rem; }
+    .doc-icon { color:var(--green); font-size:1.8rem; }
+    .contact-box { text-align:center; }
+    .contact-links { display:flex; flex-wrap:wrap; justify-content:center; gap:.8rem; margin-top:1.4rem; }
+    .contact-links a { text-decoration:none; border:1px solid var(--line); padding:.65rem .9rem; border-radius:5px; }
+    .contact-links a:hover { color:var(--green); border-color:var(--green); }
+    footer { padding:1.6rem 1rem; text-align:center; color:#718477; font-size:.76rem; }
+    .note { margin-top:1rem; font-size:.78rem; color:#84998a; }
+    @media (max-width: 850px) {
+      .grid { grid-template-columns:repeat(2,1fr); }
+      .about-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width: 680px) {
+      nav { align-items:flex-start; flex-wrap:wrap; }
+      .menu-toggle { display:block; }
+      .nav-links { display:none; width:100%; flex-direction:column; gap:.1rem; padding:.5rem 0; }
+      .nav-links.open { display:flex; }
+      .nav-links a { display:block; padding:.5rem 0; }
+      .hero { min-height:75vh; }
+      section { padding:4rem 0; }
+      .grid, .cards, .doc-grid { grid-template-columns:1fr; }
+      .timeline-item { grid-template-columns:1fr; gap:.3rem; }
+      .doc-card { align-items:flex-start; flex-direction:column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior:auto; }
+      *, *::before, *::after { transition:none !important; }
+    }
+  </style>
 </head>
 <body>
-
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-        
-        </ul>
+  <header class="topbar">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#home">SJ<span style="color:#e8f2eb">_</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">MENU</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#simulations">Virtual Experience</a></li>
+        <li><a href="#documents">Documents</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h1> Satya Jagadeesh </h1>
-            <p>Cybersecurity Graduate | Penetration Testing & Network Security</p>
-            <div class="terminal">
-                <p>"Protecting digital worlds from cyber threats"</p>
-            </div>
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="eyebrow">Cyber Security // Digital Forensics // IT</div>
+        <h1>Satya Jagadeesh<br><span>Kodela</span></h1>
+        <p class="hero-subtitle">Cyber Security &amp; Digital Forensics Postgraduate</p>
+        <p class="hero-copy">I am completing a Master's degree at Auckland University of Technology, with interests in cybersecurity, digital forensics, security operations and IT support. I enjoy technical investigation, solving problems and continuously developing practical skills.</p>
+        <div class="terminal">
+          <span class="terminal-label">satya@portfolio:~$ whoami</span>
+          <strong>Curious mind. Evidence-led approach. Always learning.</strong>
         </div>
+        <div class="actions">
+          <a class="btn" href="#projects">Explore projects <span aria-hidden="true">→</span></a>
+          <a class="btn secondary" href="assets/Satya_Jagadeesh_CV.pdf" target="_blank" rel="noopener">View CV</a>
+          <a class="btn secondary" href="#contact">Get in touch</a>
+        </div>
+      </div>
     </section>
 
- <section id="about" class="about">
-    <div class="container about-container">
-        <div class="about-image">
-            <img src="https://i.pinimg.com/1200x/a7/dd/df/a7dddfae831fe816e94d2777726fe267.jpg" alt="Profile Picture">
+    <section id="about">
+      <div class="container">
+        <div class="section-heading"><div class="eyebrow">01 / Profile</div><h2>About Me</h2></div>
+        <div class="about-grid">
+          <div class="panel">
+            <p>I am a Cyber Security and Digital Forensics postgraduate student at Auckland University of Technology (AUT), with completion expected in December 2026. Through my studies, research and personal projects, I have developed foundational knowledge across cybersecurity, network security, digital forensics and IT infrastructure.</p>
+            <br>
+            <p>My Master's research examines how graceful and abrupt shutdown methods affect Windows 11 system-state persistence, focusing on Windows Registry and NTFS artefacts. I have also worked on digital evidence examination, web application security testing, honeypot deployment and Python-based steganography.</p>
+            <br>
+            <p>Alongside my technical development, my employment and volunteering experiences have strengthened my communication, teamwork, reliability, attention to detail and ability to follow procedures in busy environments. I am looking for opportunities to keep learning while contributing positively to a professional team.</p>
+          </div>
+          <div class="panel facts">
+            <div class="fact"><small>Based in</small><span>Auckland, New Zealand</span></div>
+            <div class="fact"><small>Study</small><span>Master of Cyber Security and Digital Forensics, AUT</span></div>
+            <div class="fact"><small>Career interests</small><span>Cybersecurity · Digital Forensics · SOC · IT Support</span></div>
+            <div class="fact"><small>Professional focus</small><span>Investigation, security fundamentals and reliable IT environments</span></div>
+            <div class="fact"><small>Languages / scripting</small><span>Python · Bash · PowerShell fundamentals</span></div>
+          </div>
         </div>
-        <div class="about-text">
-            <h2>About Me</h2>
-            <p>Hi👋, I’m Satya Jagadeesh, a passionate Computer Science graduate specializing in Cybersecurity — where curiosity meets defense. From building Python-based steganography tools to deploying honeypots and securing networks, I thrive on turning complex challenges into practical security solutions. With hands-on experience in penetration testing, AWS, and network defense, I bring both technical skill and a relentless drive to learn. My goal? To safeguard the digital world, one vulnerability at a time.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading"><div class="eyebrow">02 / Technical toolkit</div><h2>Skills &amp; Technologies</h2></div>
+        <div class="grid">
+          <article class="skill-card"><h3>Digital Forensics</h3><p>Forensic examination, evidence preservation and file recovery.</p><div class="tag-list"><span class="tag">Autopsy</span><span class="tag">Scalpel</span><span class="tag">Foremost</span><span class="tag">PhotoRec</span><span class="tag">HxD</span><span class="tag">NTFS</span><span class="tag">Windows Registry</span></div></article>
+          <article class="skill-card"><h3>Security Testing</h3><p>Web application and network security testing fundamentals.</p><div class="tag-list"><span class="tag">Burp Suite</span><span class="tag">OWASP ZAP</span><span class="tag">Nmap</span><span class="tag">OWASP Top 10</span></div></article>
+          <article class="skill-card"><h3>Networking</h3><p>Core networking concepts and infrastructure fundamentals.</p><div class="tag-list"><span class="tag">TCP/IP</span><span class="tag">Routing &amp; Switching</span><span class="tag">VLANs</span><span class="tag">Subnetting</span><span class="tag">NAT</span><span class="tag">DNS</span></div></article>
+          <article class="skill-card"><h3>Operating Systems</h3><p>Working knowledge of Windows and Linux environments.</p><div class="tag-list"><span class="tag">Windows 11</span><span class="tag">Windows Server</span><span class="tag">Kali Linux</span><span class="tag">Linux</span></div></article>
+          <article class="skill-card"><h3>Systems &amp; Cloud</h3><p>Foundational knowledge of system administration and cloud services.</p><div class="tag-list"><span class="tag">Active Directory</span><span class="tag">AWS EC2</span><span class="tag">AWS S3</span><span class="tag">AWS IAM</span><span class="tag">Troubleshooting</span></div></article>
+          <article class="skill-card"><h3>Programming &amp; Tools</h3><p>Scripting, basic web development and version control.</p><div class="tag-list"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">PowerShell fundamentals</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Git</span><span class="tag">Wireshark</span></div></article>
         </div>
-    </div>
-</section>
+        <p class="note">Skills reflect academic, laboratory and personal-project exposure. They are not presented as professional certifications or production-administration experience.</p>
+      </div>
+    </section>
 
-<section id="skills">
-    <div class="container">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
-                <h3>Python Programming</h3>
-            </div>
-            <div class="skill-card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
-                <h3>Amazon Web Services</h3>
-            </div>
-            <div class="skill-card">
-                <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRaGrBdln1C2FIazIyTCH4Dxp6cZ3Lxr8w4ODma0QVvhPebayacPUAn6THaoDWehPnSiKxr7FhLRFwVp9rSXCQnPHaUi5Au" alt="Windows Server">
-                <h3>Windows Server</h3>
-            </div>
-            <div class="skill-card">
-                <img src="https://1000logos.net/wp-content/uploads/2016/11/Cisco-Logo-2006.png" alt="Networking">
-                <h3>Networking (CCNA, CCNP)</h3>
-            </div>
-            <div class="skill-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjmC0SpnKtvVB4u9HZNJpP4XEb8yr3MKgOjA&s" alt="Vulnerability Assessment">
-                <h3>Vulnerability Assessment</h3>
-            </div>
-            <div class="skill-card">
-                <img src="https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-firewall-png-image_6480378.png" alt="Firewall">
-                <h3>Firewall</h3>
-            </div>
-            <div class="skill-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/1163/1163519.png" alt="Cryptography">
-                <h3>Cryptography</h3>
-            </div>
-            <div class="skill-card">
-                <img src="https://img.favpng.com/12/25/8/microsoft-excel-microsoft-project-logo-microsoft-word-png-favpng-UkYRLVGcGivCEFNgUBTaDTVAM.jpg" alt="Excel">
-                <h3>Excel (Data Analysis)</h3>
-            </div>
-            <div class="skill-card">
-                <img src="https://images.seeklogo.com/logo-png/40/1/open-web-application-security-project-owasp-logo-png_seeklogo-408771.png" alt=" Cyber Security" >
-                <h3>Cyber Security (OWASP 10)</h3>
-            </div>
-            <div class="skill-card">
-                <img src="https://www.pikpng.com/pngl/b/74-748128_network-security-icon-internet-security-icon-png-clipart.png" alt="Network Security">
-                <h3>Network Security</h3>
-            </div>
-            <div class="skill-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJrO5I6nkFxepNEmniN9oel0aZbJF0Tv-fKQ&s" alt="Penetration Testing">
-                <h3>Penetration Testing</h3>
-                </div>
-            <div class ="skill-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJEzRbiNpJgmt_x-lKoAt_usn5BtbMR7Wynw&s" alt = "Html & CSS">
-                <h3>HTML & CSS</h3>
-            </div>    
-            
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading"><div class="eyebrow">03 / Selected work</div><h2>Projects &amp; Research</h2></div>
+        <div class="cards">
+          <article class="card">
+            <div class="meta">Master's research · Windows 11</div><h3>Windows Shutdown Forensics</h3>
+            <p>Investigates how graceful and abrupt shutdown methods affect Windows 11 system-state persistence. The research examines Registry and NTFS artefacts, including $MFT, $LogFile and $UsnJrnl, using offline acquisition to preserve source evidence.</p>
+            <div class="tag-list"><span class="tag">Windows 11</span><span class="tag">Registry</span><span class="tag">NTFS</span><span class="tag">Forensic acquisition</span></div>
+            <div class="card-footer"><span class="status">Research project</span></div>
+          </article>
+          <article class="card">
+            <div class="meta">Academic laboratory</div><h3>Digital Forensics Examination</h3>
+            <p>Examined a 128 MB forensic image using Autopsy, Scalpel, Foremost and PhotoRec. Recovered nine image files (JPG, PNG and GIF) and examined the results under evidence-preservation principles.</p>
+            <div class="tag-list"><span class="tag">Autopsy</span><span class="tag">Scalpel</span><span class="tag">Foremost</span><span class="tag">PhotoRec</span></div>
+            <div class="card-footer"><span class="status">Academic project</span></div>
+          </article>
+          <article class="card">
+            <div class="meta">Web application security</div><h3>OWASP Juice Shop Security Testing</h3>
+            <p>Completed practical security tasks against common web application vulnerabilities, using Burp Suite and OWASP ZAP to inspect HTTP requests, responses and application weaknesses.</p>
+            <div class="tag-list"><span class="tag">OWASP Juice Shop</span><span class="tag">Burp Suite</span><span class="tag">OWASP ZAP</span></div>
+            <div class="card-footer"><span class="status">Academic project</span></div>
+          </article>
+          <article class="card">
+            <div class="meta">Network security</div><h3>Deceptive Honeypot Environment</h3>
+            <p>Deployed a Kali Linux honeypot to capture unauthorised access attempts, reviewed attack logs and connection patterns, considered firewall controls and developed defensive recommendations.</p>
+            <div class="tag-list"><span class="tag">Kali Linux</span><span class="tag">Honeypot</span><span class="tag">Log analysis</span></div>
+            <div class="card-footer"><span class="status">Personal project</span></div>
+          </article>
+          <article class="card">
+            <div class="meta">Python development</div><h3>Image Steganography Tool</h3>
+            <p>Built a Python and Tkinter application using Least Significant Bit (LSB) techniques to embed and extract hidden messages in image files.</p>
+            <div class="tag-list"><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">LSB</span></div>
+            <div class="card-footer"><span class="status">Personal project</span></div>
+          </article>
+          <article class="card">
+            <div class="meta">Wireless security · ESP8266</div><h3>Wireless Security Testing</h3>
+            <p>Programmed an ESP8266 platform to study wireless communication behaviour and network resilience under deliberate interference in a controlled laboratory setting.</p>
+            <div class="tag-list"><span class="tag">ESP8266</span><span class="tag">Wireless</span><span class="tag">Lab testing</span></div>
+            <div class="card-footer"><span class="status">Academic / personal project</span></div>
+          </article>
+          <article class="card">
+            <div class="meta">IoT · Team coursework</div><h3>Smart Door Security Monitoring</h3>
+            <p>Team-based IoT coursework involving a Raspberry Pi, multiple sensors and a monitoring system. Further implementation details and results will be added as the project documentation is prepared.</p>
+            <div class="tag-list"><span class="tag">Raspberry Pi</span><span class="tag">IoT</span><span class="tag">Sensors</span></div>
+            <div class="card-footer"><span class="status">Coursework project</span></div>
+          </article>
+          <article class="card">
+            <div class="meta">Web development</div><h3>Personal Security Portfolio</h3>
+            <p>Designed and built this personal portfolio using HTML and CSS and deployed it through GitHub Pages. The site is being expanded to document education, experience, research and practical work.</p>
+            <div class="tag-list"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">GitHub Pages</span></div>
+            <div class="card-footer"><span class="status">Live website</span></div>
+          </article>
         </div>
-    </div>
-</section>
+        <p class="note">Project source-code links will be added progressively as repositories are published. No repository links are shown until the relevant work is uploaded and ready to share.</p>
+      </div>
+    </section>
 
-    
-
-   <section id="projects">
-    <div class="container">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-
-            <div class="project-card">
-                <img src="https://e7.pngegg.com/pngimages/793/592/png-clipart-steganography-encryption-information-cryptography-data-oig-compliance-regulations-angle-text.png" alt="Steganography Tool">
-                <h3>Steganography Tool (Python)</h3>
-                <p>GUI-based tool using Tkinter for hiding and revealing messages in images with LSB technique. Focused on secure, user-friendly message concealment.</p>
-            </div>
-
-            <div class="project-card">
-                <img src="https://techvccloud.mediacdn.vn/280518386289090560/2025/1/23/honeypot-17376236884851503155270-0-17-349-638-crop-17376236920111007536670.png" alt="Honeypot">
-                <h3>Honeypot Deployment</h3>
-                <p>Deployed a honeypot using Kali Linux to detect and log unauthorized access attempts. Analyzed data to strengthen network security measures.</p>
-            </div>
-
-            <div class="project-card">
-                <img src="https://blogapp.bitdefender.com/hotforsecurity/content/images/2022/02/French-dad-uses-signal-jammer-to-stop-his-kids-from-going-online--takes-down-neighborhood-s-internet-too-1.png" alt="WiFi Jammer">
-                <h3>WiFi Jammer (ESP8266)</h3>
-                <p>Developed a WiFi jammer using ESP8266 to test network resilience against signal interference, with focus on ethical and legal considerations.</p>
-            </div>
-
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading"><div class="eyebrow">04 / Professional background</div><h2>Work &amp; Volunteering</h2></div>
+        <div class="timeline">
+          <article class="timeline-item"><div class="date">Jul 2026 – Present</div><div><h3>Site Assistant (Casual) · Face Consultants</h3><p>Conduct concrete floor surveys and delamination testing across project sites, record technical measurements accurately against requirements and follow site safety procedures.</p></div></article>
+          <article class="timeline-item"><div class="date">Jun 2026 – Present</div><div><h3>Nightfill Assistant (Part-time) · PAK’nSAVE</h3><p>Complete overnight replenishment while maintaining stock accuracy and store readiness; coordinate with colleagues and follow health, safety and manual-handling procedures.</p></div></article>
+          <article class="timeline-item"><div class="date">Oct 2025 – Jun 2026</div><div><h3>Customer Service / Trainee Shift Supervisor · KFC</h3><p>Worked across customer service and food preparation during busy periods, with exposure to shift supervision, workflow coordination, quality control and cash handling.</p></div></article>
+          <article class="timeline-item"><div class="date">Jul 2025 – May 2026</div><div><h3>Property Management Intern · TNZ Property Management</h3><p>Supported property viewings and inspections, tenant background checks and digital tenancy documentation while maintaining accurate records and following compliance procedures.</p></div></article>
+          <article class="timeline-item"><div class="date">Aug 2026</div><div><h3>Street Collection Volunteer · Cancer Society of New Zealand</h3><p>Collected public donations during the Daffodil Day appeal, engaged with the public, handled cash accurately and represented the charity as part of a volunteer team.</p></div></article>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section id="resume">
-    <div class="container" style="text-align: center; padding: 4rem 2rem;">
-        <h2 style="color: #00ff00; text-shadow: 0 0 10px #00ff00;">Resume</h2>
-        <p style="color: #fff; margin-top: 1rem;">Download my latest resume to learn more about my education, certifications, and experience in cybersecurity.</p>
-        
-        <a href="Satya_Jagadeesh_Resume.pdf" download 
-           style="display: inline-block; 
-                  margin-top: 2rem; 
-                  padding: 1rem 2rem; 
-                  border: 1px solid #00ff00; 
-                  color: #00ff00; 
-                  text-decoration: none; 
-                  border-radius: 8px; 
-                  font-weight: bold; 
-                  transition: all 0.3s ease;">
-            ⬇ Download Resume
-        </a>
-    </div>
-</section>
-
-
-<section id="contact">
-    <div class="container">
-        <h2>Let's Connect</h2>
-        <p>I'd love to hear from you! Click a logo below to connect with me.</p>
-        <div class="social-links">
-            <a href="https://www.instagram.com/jaxx.pvt" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-            </a>
-            <a href="mailto:satyajagadeesh489@gmail.com">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
-            </a>
-            <a href="https://www.linkedin.com/in/satya-jagadeesh/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
-            </a>
+    <section id="education">
+      <div class="container">
+        <div class="section-heading"><div class="eyebrow">05 / Academic background</div><h2>Education</h2></div>
+        <div class="timeline">
+          <article class="timeline-item"><div class="date">Jul 2025 – Dec 2026</div><div><h3>Master of Cyber Security and Digital Forensics</h3><p>Auckland University of Technology (AUT), Auckland, New Zealand.</p><p class="note">Expected completion: December 2026. Research focus: forensic analysis of Windows 11 shutdown behaviour and Registry / NTFS metadata persistence.</p></div></article>
+          <article class="timeline-item"><div class="date">Nov 2021 – Jun 2024</div><div><h3>Bachelor of Science in Computer Science</h3><p>Andhra University, Andhra Pradesh, India.</p></div></article>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
+    <section id="simulations">
+      <div class="container">
+        <div class="section-heading"><div class="eyebrow">06 / Industry exposure</div><h2>Virtual Job Simulations</h2></div>
+        <div class="cards">
+          <article class="card"><div class="meta">Forage · November 2025</div><h3>Datacom</h3><p>Cyber Security Operations Job Simulation</p><div class="credential">Credential ID: R9ajziiWcSszGaMmY</div></article>
+          <article class="card"><div class="meta">Forage · June 2025</div><h3>Deloitte Australia</h3><p>Cyber Job Simulation</p><div class="credential">Credential ID: izPbC6ZAdurdLNxH9</div></article>
+          <article class="card"><div class="meta">Forage · September 2024</div><h3>ANZ Australia</h3><p>Cyber Security Management Job Simulation</p><div class="credential">Credential ID: hYDFcpiokw6bujJxA</div></article>
+          <article class="card"><div class="meta">Forage · April 2024</div><h3>Mastercard</h3><p>Cybersecurity Job Simulation</p><div class="credential">Credential ID: 6EMB9M4cbjmRyysdr</div></article>
+          <article class="card"><div class="meta">Forage · February 2024</div><h3>JPMorgan Chase &amp; Co.</h3><p>Excel Skills Job Simulation</p><div class="credential">Credential ID: zL3BbgGu5Ssjapx2s</div></article>
+        </div>
+        <p class="note">These are virtual job simulations completed through Forage, not paid employment or formal industry internships. Credential IDs are included for reference; add direct verification URLs when available.</p>
+      </div>
+    </section>
+
+    <section id="documents">
+      <div class="container">
+        <div class="section-heading"><div class="eyebrow">07 / Career documents</div><h2>CV &amp; Cover Letter</h2></div>
+        <div class="doc-grid">
+          <article class="panel doc-card">
+            <div><div class="doc-icon" aria-hidden="true">[PDF]</div><h3>Curriculum Vitae</h3><p>My current CV, including education, technical skills, projects and experience.</p></div>
+            <div class="actions"><a class="btn" href="assets/Satya_Jagadeesh_CV.pdf" target="_blank" rel="noopener">View CV</a><a class="btn secondary" href="assets/Satya_Jagadeesh_CV.pdf" download>Download CV</a></div>
+          </article>
+          <article class="panel doc-card">
+            <div><div class="doc-icon" aria-hidden="true">[PDF]</div><h3>Professional Introduction</h3><p>Your uploaded introduction covering your background, technical interests and professional strengths.</p></div>
+            <div class="actions"><a class="btn" href="assets/Satya_Jagadeesh_Cover_Letter.pdf" target="_blank" rel="noopener">View PDF</a><a class="btn secondary" href="assets/Satya_Jagadeesh_Cover_Letter.pdf" download>Download PDF</a></div>
+          </article>
+        </div>
+        <p class="note">For a specific job application, I recommend using a tailored cover letter rather than sending the general version unchanged.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-box">
+        <div class="section-heading"><div class="eyebrow">08 / Contact</div><h2>Let's Connect</h2></div>
+        <p>I'm happy to connect about entry-level cybersecurity, digital forensics, security operations and IT opportunities.</p>
+        <div class="contact-links">
+          <a href="mailto:satyajagadeesh489@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/satya-jagadeesh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/jagadeeshsatya" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+        <p class="note">Auckland, New Zealand · Open to learning and professional opportunities</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>© <span id="year"></span> Satya Jagadeesh Kodela · Built with HTML &amp; CSS · Hosted on GitHub Pages</p></footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
-
-
